@@ -36,6 +36,9 @@ app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "public/notes.html"));
 });
 
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 //  ============== API Routes ===========================
 
@@ -106,6 +109,7 @@ app.post("/api/clearnotes", function (req, res) {
 });
 
 // If no matching route is found default to home
+
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "public/index.html"));
 });
